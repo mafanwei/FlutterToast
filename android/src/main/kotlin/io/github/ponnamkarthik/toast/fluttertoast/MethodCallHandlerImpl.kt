@@ -95,6 +95,7 @@ internal class MethodCallHandlerImpl(private var context: Context) : MethodCallH
                         }
                     }
                 }
+                
                 if(useDefault == true) {
                      mToast = Toast.makeText(context, mMessage, mDuration)
                 }
