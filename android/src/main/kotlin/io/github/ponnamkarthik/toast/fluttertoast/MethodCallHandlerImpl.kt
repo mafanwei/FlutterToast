@@ -28,6 +28,7 @@ internal class MethodCallHandlerImpl(private var context: Context) : MethodCallH
                 val bgcolor = call.argument<Number>("bgcolor")
                 val textcolor = call.argument<Number>("textcolor")
                 val textSize = call.argument<Number>("fontSize")
+                val useDefault = call.argument<Boolean>("useDefault")
 
                 val mGravity: Int = when (gravity) {
                     "top" -> Gravity.TOP
@@ -94,7 +95,9 @@ internal class MethodCallHandlerImpl(private var context: Context) : MethodCallH
                         }
                     }
                 }
-                
+                if(useDefault) {
+                     mToast = Toast.makeText(context, mMessage, mDuration)
+                }
                 if (context is Activity) {
                     (context as Activity).runOnUiThread { mToast?.show() }
                 } else {
