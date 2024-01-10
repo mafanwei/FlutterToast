@@ -38,6 +38,7 @@ class Fluttertoast {
   /// Parameter [msg] is required and all remaining are optional
   static Future<bool?> showToast({
     required String msg,
+    bool useDefault = false,
     Toast? toastLength,
     int timeInSecForIosWeb = 1,
     double? fontSize,
@@ -81,7 +82,8 @@ class Fluttertoast {
       'fontSize': fontSize,
       'webShowClose': webShowClose,
       'webBgColor': webBgColor,
-      'webPosition': webPosition
+      'webPosition': webPosition,
+      'useDefault': useDefault
     };
 
     bool? res = await _channel.invokeMethod('showToast', params);
