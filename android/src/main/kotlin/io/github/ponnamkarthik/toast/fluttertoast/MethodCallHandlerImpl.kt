@@ -95,7 +95,7 @@ internal class MethodCallHandlerImpl(private var context: Context) : MethodCallH
                         }
                     }
                 }
-                if(useDefault) {
+                if(useDefault == true) {
                      mToast = Toast.makeText(context, mMessage, mDuration)
                 }
                 if (context is Activity) {
