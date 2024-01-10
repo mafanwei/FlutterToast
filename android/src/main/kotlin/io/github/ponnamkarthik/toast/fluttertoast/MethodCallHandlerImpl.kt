@@ -28,7 +28,7 @@ internal class MethodCallHandlerImpl(private var context: Context) : MethodCallH
                 val bgcolor = call.argument<Number>("bgcolor")
                 val textcolor = call.argument<Number>("textcolor")
                 val textSize = call.argument<Number>("fontSize")
-                val useDefault = call.argument<Boolean?>("useDefault") ?: false
+                val useDefault: Boolean = call.argument<Boolean?>("useDefault") ?: false
 
                 val mGravity: Int = when (gravity) {
                     "top" -> Gravity.TOP
